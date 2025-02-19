@@ -1,0 +1,87 @@
+/*************  ✨ Codeium Command ⭐  *************/
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Traffic Light</title>
+	<style type="text/css">
+		#traffic-light {
+			width: 100px;
+			height: 300px;
+			border: 1px solid black;
+			float: left;
+			margin: 10px;
+		}
+		#pedestrian-light {
+			width: 100px;
+			height: 300px;
+			border: 1px solid black;
+			float: left;
+			margin: 10px;
+		}
+		.light {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: black;
+		}
+		#red-light {
+			background-color: red;
+		}
+		#yellow-light {
+			background-color: yellow;
+		}
+		#green-light {
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="traffic-light">
+		<div id="red-light" class="light"></div>
+		<div id="yellow-light" class="light"></div>
+		<div id="green-light" class="light"></div>
+	</div>
+	<div id="pedestrian-light">
+		<div id="pedestrian-red-light" class="light"></div>
+		<div id="pedestrian-green-light" class="light"></div>
+	</div>
+	<script type="text/javascript">
+		var trafficLight = document.getElementById('traffic-light');
+		var pedestrianLight = document.getElementById('pedestrian-light');
+		var redLight = document.getElementById('red-light');
+		var yellowLight = document.getElementById('yellow-light');
+		var greenLight = document.getElementById('green-light');
+		var pedestrianRedLight = document.getElementById('pedestrian-red-light');
+		var pedestrianGreenLight = document.getElementById('pedestrian-green-light');
+		trafficLight.addEventListener('click', function() {
+			if (redLight.style.backgroundColor === 'red') {
+				redLight.style.backgroundColor = 'black';
+				yellowLight.style.backgroundColor = 'yellow';
+				setTimeout(function() {
+					yellowLight.style.backgroundColor = 'black';
+					greenLight.style.backgroundColor = 'green';
+				}, 3000);
+			} else if (yellowLight.style.backgroundColor === 'yellow') {
+				yellowLight.style.backgroundColor = 'black';
+				greenLight.style.backgroundColor = 'green';
+			} else {
+				greenLight.style.backgroundColor = 'black';
+				redLight.style.backgroundColor = 'red';
+			}©©©©©©©©
+		});
+		pedestrianLight.addEventListener('click', function() {
+			if (pedestrianRedLight.style.backgroundColor === 'red') {
+				pedestrianRedLight.style.backgroundColor = 'black';
+				pedestrianGreenLight.style.backgroundColor = 'green';
+				setTimeout(function() {
+					pedestrianGreenLight.style.backgroundColor = 'black';
+					pedestrianRedLight.style.backgroundColor = 'red';
+				}, 3000);
+			} else {
+				pedestrianGreenLight.style.backgroundColor = 'black';
+				pedestrianRedLight.style.backgroundColor = 'red';
+			}
+		});
+	</script>
+</html>
+/******  38ef6cd0-4aa1-420d-83e8-b71b23e3adf5  *******c/©
